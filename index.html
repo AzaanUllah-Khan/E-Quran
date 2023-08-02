@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran App - Learn Quran And Recite it Every Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>The Quran</h1>
+    <p>Learn Quran and<br> Recite once EveryDay!</p>
+    <div class="a">
+        <img src="https://e1.pxfuel.com/desktop-wallpaper/210/979/desktop-wallpaper-pin-on-islam-quotes-quranic-verses.jpg"
+            class="animate__animated animate__headShake">
+        <button onclick="getUserName()">GET STARTED</button>
+    </div>
+    <script>
+        function getUserName() {
+            if (!localStorage.getItem("user")) {
+                Swal.fire({
+                    title: 'Enter Your Name',
+                    input: 'text',
+                    inputAttributes: {
+                        autocapitalize: 'on'
+                    },
+                    confirmButtonText: 'SET USER NAME',
+                    showLoaderOnConfirm: true,
+                    allowOutsideClick: () => !Swal.isLoading()
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        localStorage.setItem("user", result.value)
+                        location.replace('./main.html')
+                    }
+                });
+            }
+            else if(localStorage.getItem("user")){
+                location.replace('./main.html')
+            }
+        };
+    </script>
+    <script src='sweetalert2.all.min.js'></script>
+    <script src=' https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300&family=Noto+Sans+Arabic:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    background: rgb(9, 0, 161);
+    background-color: #f6f6f6;
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 3%;
+
+}
+
+nav h1 {
+    font-size: 24px;
+    color: #5f20b7;
+    cursor: pointer;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    border-radius: 10px;
+    outline: 2px solid rgba(95, 32, 183, 0.2);
+    padding: 0;
+    width: 45%;
+}
+
+nav input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    color: #5f20b7;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+nav i {
+    color: #5f20b7;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+nav button {
+    width: 130px;
+    padding: 7px;
+    background-color: #5f20b7;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+nav i:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px 0 0 10px;
+}
+
+.first_sec {
+    width: 94%;
+    margin: 40px auto 0;
+}
+
+.first_sec h3 {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: normal;
+}
+
+.first_sec h1 {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.banner {
+    width: 100%;
+    height: 250px;
+    opacity: .8;
+    object-fit: cover;
+    transition: all .3s linear;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+.banner:hover {
+    opacity: .9;
+}
+
+.search-nav {
+    width: 94%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px 10px 30px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.search-nav2 {
+    width: 94%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-top: 10px;
+}
+
+.search-nav div {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+i {
+    cursor: pointer;
+}
+
+.search-nav div input {
+    border-radius: 10px;
+    outline: 1px solid rgba(95, 32, 183, 0.2);
+    border: none;
+    padding: 10px;
+    width: 50%;
+}
+
+.search-nav button {
+    width: 150px;
+    padding: 10px 15px;
+    background-color: #5f20b7;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .1s linear;
+    cursor: pointer;
+}
+
+.search-nav button:hover {
+    outline: 2px solid #5f20b7;
+    background-color: transparent;
+    color: #5f20b7;
+}
+
+.main {
+    width: 94%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px 10px 30px 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.main .nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-direction: row-reverse;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+#arabicText h3 {
+    font-weight: normal;
+    font-size: 18px;
+    color: #e51212;
+}
+
+#tranText h3 {
+    font-weight: normal;
+    font-size: 14px;
+    color: #5f20b7;
+}
+
+.main .nav h3 {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.main .nav h3:nth-child(1) {
+    /* font-family: 'Cairo', sans-serif; */
+    font-family: 'Noto Sans Arabic', "Poppins";
+}
+
+.main-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-main .arabic {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.75);
+}
+
+.arabic h4 {
+    font-size: 24px;
+    font-weight: normal;
+    text-align: right;
+    font-family: 'Cairo', sans-serif;
+    opacity: 0.8;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+    font-family: 'Noto Sans Arabic', sans-serif;
+}
+
+.arabic h4:hover {
+    opacity: 1;
+}
+
+.translation h4 {
+    font-size: 13px;
+    font-weight: lighter;
+    text-align: left;
+    color: #5f20b7;
+}
+
+@media screen and (max-width: 650px) {
+    nav button {
+        order: -1;
+    }
+
+    nav input {
+        width: 50%;
+    }
+
+    .search-nav {
+        gap: 7px;
+        flex-direction: column;
+    }
+
+    .search-nav div {
+        width: 100%;
+    }
+
+    .search-nav button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    nav div {
+        display: none;
+    }
+
+    nav h1 {
+        order: -1;
+    }
+
+    nav button {
+        width: 100px;
+    }
+
+    .first_sec h3 {
+        font-size: 18px;
+    }
+
+    .first_sec h1 {
+        font-size: 26px;
+    }
+
+    .banner {
+        height: 150px;
+    }
+
+    .search-nav2 {
+        display: flex;
+    }
+}

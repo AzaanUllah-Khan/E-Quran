@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran App - Home Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1 onclick="location.replace('./index.html')">Quran</h1>
+        <div>
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <button onclick="localStorage.removeItem('user'); window.location.href = 'index.html'">Logout</button>
+    </nav>
+    <div class="first_sec">
+        <h3>Assalamoalaikum</h3>
+        <h1 id="user">Azaan Ullah Khan</h1>
+        <img src="https://mozters.com/wp-content/uploads/2020/08/2-2-850-x-607.jpg" alt="surah rehman banner image"
+            class="banner">
+    </div>
+    <div class="search-nav">
+        <div>
+            <input type="text" id="surah" placeholder="Enter Surah Number" min="1">
+            <input type="text" id="ayat" placeholder="Enter Ayat Number" min="1">
+        </div>
+        <button onclick="fetchVerse()">Search <i class="fa fa-search"></i></button>
+    </div>
+    <div class="search-nav2">
+        <i class="fa-solid fa-arrow-left" onclick="dec()">
+            <i class="fa fa-minus"></i>
+        </i>
+        <i class="fa fa-add" onclick="inc()">
+
+            <i class="fa-solid fa-arrow-right"></i>
+        </i>
+    </div>
+    <div class="main">
+        <div class="nav">
+            <h3 id="sT">Surah Name</h3>
+            <h3 id="disN">01</h3>
+        </div>
+        <div class="main-main">
+            <div class="arabic">
+                <h4 id="arabicText">اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا
+                    نَوْمٌ ۚ لَهُ مَا
+                    فِي
+                    السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ
+                    مَا
+                    بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ
+                    وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ
+                    الْعَظِيمُ</h4>
+            </div>
+            <div class="translation">
+                <h4 id="tranText">Allah - there is no deity except Him, the Ever-Living, the Sustainer of [all]
+                    existence. Neither
+                    drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the
+                    earth. Who is it that can intercede with Him except by His permission? He knows what is [presently]
+                    before them and what will be after them, and they encompass not a thing of His knowledge except for
+                    what
+                    He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not.
+                    And He
+                    is the Most High, the Most Great</h4>
+            </div>
+        </div>
+    </div>
+    <script>
+        var user = document.getElementById("user")
+        user.innerHTML = localStorage.getItem("user")
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
