@@ -96,12 +96,10 @@ function inc() {
     }
   });
 }
-
 function dec() {
   let currentSurah = parseInt(document.getElementById("surah").value);
   let currentAyat = parseInt(document.getElementById("ayat").value);
 
-  // If the user has not written anything inside the input fields, set them to 1
   if (isNaN(currentSurah) || currentSurah <= 0) {
     currentSurah = 1;
     document.getElementById("surah").value = currentSurah;
@@ -120,32 +118,29 @@ function dec() {
 
       if (currentAyat === 1) {
         if (currentSurah === 1) {
-          // If currentSurah is 1 and currentAyat is 1, do nothing
           return;
         } else {
-          // Switch to the previous surah and set the ayat to its total ayats
-          document.getElementById("surah").value = currentSurah - 1;
-          document.getElementById("ayat").value = totalAyats;
+          $.ajax({
+            url: `https://api.alquran.cloud/v1/surah/${currentSurah - 1}`,
+            method: 'GET',
+            success: function (prevSurahData) {
+              const prevTotalAyats = prevSurahData.data.numberOfAyahs;
+              document.getElementById("surah").value = currentSurah - 1;
+              document.getElementById("ayat").value = prevTotalAyats;
+              fetchVerse();
+            },
+            error: function (error) {
+              console.error('Error fetching Surah information:', error);
+            }
+          });
         }
       } else {
-        // Decrement the current ayat
         document.getElementById("ayat").value = currentAyat - 1;
+        fetchVerse();
       }
-
-      fetchVerse();
     },
     error: function (error) {
       console.error('Error fetching Surah information:', error);
     }
   });
 }
-document.getElementById("surah").addEventListener("input", () => {
-  if(document.getElementById("surah").value <= 0 && document.getElementById('surah').value != ""){
-    document.getElementById("surah").value = 1
-  }
-})
-document.getElementById("ayat").addEventListener("input", () => {
-  if(document.getElementById("ayat").value <= 0 && document.getElementById('ayat').value != ""){
-    document.getElementById("ayat").value = 1
-  }
-})
