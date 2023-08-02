@@ -1,6 +1,6 @@
 if (!localStorage.getItem("user")) {
   location.replace('./index.html')
-}F
+}
 
 function fetchVerse() {
   const surahNumber = document.getElementById('surah').value;
