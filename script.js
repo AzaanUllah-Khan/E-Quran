@@ -11,13 +11,13 @@ function fetchVerse() {
   document.getElementById('disN').innerHTML = verseNumber
   // Fetch Arabic verse
   $.ajax({
-    url: `http://api.alquran.cloud/v1/ayah/${surahNumber}:${verseNumber}/${editionArabic}`,
+    url: `https://api.alquran.cloud/v1/ayah/${surahNumber}:${verseNumber}/${editionArabic}`,
     method: 'GET',
     success: function (data) {
       const verseArabic = data.data.text;
 
       $.ajax({
-        url: `http://api.alquran.cloud/v1/ayah/${surahNumber}:${verseNumber}/${editionEnglish}`,
+        url: `https://api.alquran.cloud/v1/ayah/${surahNumber}:${verseNumber}/${editionEnglish}`,
         method: 'GET',
         success: function (data) {
           const verseEnglish = data.data.text;
@@ -37,7 +37,7 @@ function fetchVerse() {
 }
 function fetchSurah(surahNumber) {
   $.ajax({
-    url: `http://api.alquran.cloud/v1/surah/${surahNumber}`,
+    url: `https://api.alquran.cloud/v1/surah/${surahNumber}`,
     method: 'GET',
     success: function (data) {
       const surahName = data.data.name;
@@ -77,7 +77,7 @@ function inc() {
   }
 
   $.ajax({
-    url: `http://api.alquran.cloud/v1/surah/${currentSurah}`,
+    url: `https://api.alquran.cloud/v1/surah/${currentSurah}`,
     method: 'GET',
     success: function (data) {
       const totalAyats = data.data.numberOfAyahs;
@@ -113,7 +113,7 @@ function dec() {
   }
 
   $.ajax({
-    url: `http://api.alquran.cloud/v1/surah/${currentSurah}`,
+    url: `https://api.alquran.cloud/v1/surah/${currentSurah}`,
     method: 'GET',
     success: function (data) {
       const totalAyats = data.data.numberOfAyahs;
