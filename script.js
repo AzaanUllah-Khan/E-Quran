@@ -139,3 +139,13 @@ function dec() {
     }
   });
 }
+document.getElementById("surah").addEventListener("input", () => {
+  if(document.getElementById("surah").value <= 0 && document.getElementById('surah').value != ""){
+    document.getElementById("surah").value = 1
+  }
+})
+document.getElementById("ayat").addEventListener("input", () => {
+  if(document.getElementById("ayat").value <= 0 && document.getElementById('ayat').value != ""){
+    document.getElementById("ayat").value = 1
+  }
+})
