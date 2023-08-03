@@ -144,3 +144,92 @@ function dec() {
     }
   });
 }
+
+
+
+
+
+
+
+
+function fetchAllSurahs() {
+  $.ajax({
+    url: `https://api.alquran.cloud/v1/surah`,
+    method: 'GET',
+    success: function (data) {
+      const surahs = data.data;
+      const selectElement = document.getElementById('ss');
+
+      const defaultOption = document.createElement('option');
+      defaultOption.value = '';
+      defaultOption.text = 'SELECT SURAH BY NAME';
+      defaultOption.disabled = true;
+      defaultOption.selected = true;
+      selectElement.appendChild(defaultOption);
+
+      surahs.forEach((surah) => {
+        const option = document.createElement('option');
+        option.value = surah.number;
+        option.text = `${surah.number}. ${surah.name} (${surah.englishName})`;
+        selectElement.appendChild(option);
+      });
+    },
+    error: function (error) {
+      console.error('Error fetching Surah list:', error);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetchAllSurahs();
+
+  document.getElementById('ss').addEventListener('change', function () {
+    const selectedSurahNumber = this.value;
+    document.getElementById('surah').value = selectedSurahNumber;
+    document.getElementById('ayat').value = 1;
+    fetchVerse()
+  });
+});
+
+
+
+
+
+function fetchAllSurahsSearch() {
+  $.ajax({
+    url: `https://api.alquran.cloud/v1/surah`,
+    method: 'GET',
+    success: function (data) {
+      const surahs = data.data;
+      const selectElement = document.getElementById('sss');
+
+      const defaultOption = document.createElement('option');
+      defaultOption.value = '';
+      defaultOption.text = 'Search Surah by Name';
+      defaultOption.disabled = true;
+      defaultOption.selected = true;
+      selectElement.appendChild(defaultOption);
+
+      surahs.forEach((surah) => {
+        const option = document.createElement('option');
+        option.value = surah.number;
+        option.text = `${surah.name}`;
+        selectElement.appendChild(option);
+      });
+    },
+    error: function (error) {
+      console.error('Error fetching Surah list:', error);
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetchAllSurahsSearch();
+
+  document.getElementById('sss').addEventListener('change', function () {
+    const selectedSurahNumber = this.value;
+    document.getElementById('surah').value = selectedSurahNumber;
+    document.getElementById('ayat').value = 1;
+    fetchVerse()
+  });
+});

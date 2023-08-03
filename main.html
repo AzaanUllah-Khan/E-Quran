@@ -17,7 +17,7 @@
         <h1 onclick="location.replace('./index.html')">Quran</h1>
         <div>
             <i class="fa fa-search"></i>
-            <input type="text" placeholder="Search">
+            <select id="sss"></select>
         </div>
         <button onclick="localStorage.removeItem('user'); window.location.href = 'index.html'">Logout</button>
     </nav>
@@ -28,9 +28,12 @@
             class="banner">
     </div>
     <div class="search-nav">
-        <div>
-            <input type="number" id="surah" placeholder="Enter Surah Number" min="1">
-            <input type="number" id="ayat" placeholder="Enter Ayat Number" min="1">
+        <div class="aaa">
+            <select id="ss"></select>
+            <div class="iii">
+                <input type="number" id="surah" placeholder="Enter Surah Number" min="1">
+                <input type="number" id="ayat" placeholder="Enter Ayat Number" min="1">
+            </div>
         </div>
         <button onclick="fetchVerse()">Search <i class="fa fa-search"></i></button>
     </div>

@@ -38,14 +38,17 @@ nav div {
     width: 45%;
 }
 
-nav input {
+nav select {
     background-color: transparent;
     outline: none;
     border: none;
     padding: 0 10px;
+    letter-spacing: 1px;
     color: #5f20b7;
-    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 16px;
     width: 100%;
+    text-align: right;
 }
 
 nav i {
@@ -124,8 +127,8 @@ nav i:hover {
     margin-top: 10px;
 }
 
-.search-nav div {
-    width: 70%;
+.search-nav div.aaa {
+    width: 75%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -135,12 +138,31 @@ i {
     cursor: pointer;
 }
 
+.iii {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .search-nav div input {
     border-radius: 10px;
     outline: 1px solid rgba(95, 32, 183, 0.2);
     border: none;
     padding: 10px;
     width: 50%;
+}
+
+.search-nav div select {
+    border-radius: 10px;
+    outline: 1px solid rgba(95, 32, 183, 0.2);
+    border: none;
+    padding: 5px;
+    display: none;
+    text-align: right;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Noto Sans Arabic', "Poppins";
 }
 
 .search-nav button {
@@ -202,7 +224,6 @@ i {
 }
 
 .main .nav h3:nth-child(1) {
-    /* font-family: 'Cairo', sans-serif; */
     font-family: 'Noto Sans Arabic', "Poppins";
 }
 
@@ -243,24 +264,29 @@ i {
     color: #5f20b7;
 }
 
+@media screen and (max-width: 700px) {
+    .search-nav button {
+        width: 135px;
+    }
+}
 @media screen and (max-width: 650px) {
     nav button {
         order: -1;
     }
-
-    nav input {
-        width: 50%;
+    
+    nav div {
+        gap: 0;
     }
-
+    
     .search-nav {
         gap: 7px;
         flex-direction: column;
     }
-
-    .search-nav div {
+    
+    .search-nav div.aaa {
         width: 100%;
     }
-
+    
     .search-nav button {
         width: 100%;
     }
@@ -294,4 +320,40 @@ i {
     .search-nav2 {
         display: flex;
     }
+
+    .search-nav div input {
+        width: 50%;
+    }
+
+    .search-nav div select {
+        display: block;
+        width: 50%;
+    }
+
+    .search-nav div.aaa {
+        flex-direction: column;
+    }
+
+    .search-nav div.aaa select {
+        width: 100%;
+    }
+
+}
+
+#sss::-ms-expand {
+    display: none;
+}
+
+#sss::-webkit-select {
+    appearance: none;
+}
+
+#sss::-moz-select {
+    appearance: none;
+}
+
+#sss {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
