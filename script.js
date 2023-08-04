@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('surah').value = selectedSurahNumber;
     document.getElementById('ayat').value = 1;
     fetchVerse()
+    blurSurahInput()
   });
 });
 
@@ -231,5 +232,10 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('surah').value = selectedSurahNumber;
     document.getElementById('ayat').value = 1;
     fetchVerse()
+    blurSurahInput()
   });
 });
+function blurSurahInput() {
+  const surahInput = document.getElementById('surah');
+  surahInput.blur = true;
+}
